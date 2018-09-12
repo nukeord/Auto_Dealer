@@ -195,10 +195,10 @@ public class Login extends javax.swing.JFrame {
         }else{
             conexion con = conexion.getInstance();
             con.select("SELECT * FROM usuarios WHERE username = '" + user + "' AND pass = '" + pass + "'");
-            if(con.getNumRows() == 1){
-                
+            if(con.getNumRows() == 1){                
                 Menu menu = new Menu();
                 VentanaPrincipal VP = new VentanaPrincipal();
+                menu.setMainWindow(VP);
                 VP.setTitle("AUTO DEALER");
                 VP.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 VP.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -206,8 +206,7 @@ public class Login extends javax.swing.JFrame {
                 VP.mainPanel.repaint();
                 VP.mainPanel.revalidate();
                 VP.setLocationRelativeTo(null);
-                VP.setVisible(true);
-                
+                VP.setVisible(true);                
                 this.dispose();
             }else{
                 this.error.setText("Credenciales invalidos");

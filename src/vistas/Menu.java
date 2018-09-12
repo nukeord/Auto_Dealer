@@ -10,7 +10,7 @@ package vistas;
  * @author Luis David Santiago
  */
 public class Menu extends javax.swing.JPanel {
-
+    VentanaPrincipal VP;
     /**
      * Creates new form Menu
      */
@@ -90,9 +90,19 @@ public class Menu extends javax.swing.JPanel {
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel6MouseClicked(evt);
+            }
+        });
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_User_Groups_100px.png"))); // NOI18N
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
 
         jPanel7.setBackground(new java.awt.Color(153, 153, 255));
         jPanel7.setPreferredSize(new java.awt.Dimension(90, 75));
@@ -102,6 +112,11 @@ public class Menu extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("CLIENTES");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -236,12 +251,47 @@ public class Menu extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        this.openClientes();
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        this.openClientes();
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
+        this.openClientes();
+    }//GEN-LAST:event_jPanel6MouseClicked
+
+    private void clientesBtn(java.awt.event.MouseEvent evt){
+    }
+    
+    public void openClientes(){
+        Clientes cl = new Clientes();
+        this.VP.mainPanel.removeAll();
+        this.VP.mainPanel.add(cl);
+        this.VP.mainPanel.repaint();
+        this.VP.mainPanel.revalidate();
+        System.out.println("Catgando");
+    }
+    
+    public void openProveedores(){
+        Proveedores prov = new Proveedores();
+        this.VP.mainPanel.removeAll();
+        this.VP.mainPanel.add(prov);
+        this.VP.mainPanel.repaint();
+        this.VP.mainPanel.revalidate();
+        System.out.println("Catgando");
+    }
+    
+    public void setMainWindow(VentanaPrincipal VP){
+        this.VP = VP;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -255,7 +305,5 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 }
