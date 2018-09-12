@@ -65,6 +65,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setLabelFor(usernameInput);
         jLabel3.setText("Nombre de Usuario");
 
         usernameInput.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -77,6 +78,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setLabelFor(passInput);
         jLabel4.setText("Contraseña");
 
         passInput.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
