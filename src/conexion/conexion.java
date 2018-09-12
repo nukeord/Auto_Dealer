@@ -10,7 +10,7 @@ public class conexion {
     private conexion(){
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            db = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_auto?useSSL=false", "root", "123456");
+            db = DriverManager.getConnection("jdbc:mysql://20y10lapuya.ddns.net:3306/db_auto?useSSL=false", "db_auto", "123456");
         }catch(ClassNotFoundException | SQLException e){
             JOptionPane.showMessageDialog(null, "Error de conexion: " + e.getMessage());
         }
