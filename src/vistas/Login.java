@@ -7,6 +7,7 @@ package vistas;
 
 import conexion.conexion;
 import java.awt.event.KeyEvent;
+import javax.swing.JFrame;
 
 /**
  *
@@ -45,7 +46,6 @@ public class Login extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximumSize(new java.awt.Dimension(300, 380));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(300, 380));
         setResizable(false);
         setSize(new java.awt.Dimension(300, 380));
 
@@ -196,9 +196,18 @@ public class Login extends javax.swing.JFrame {
             conexion con = conexion.getInstance();
             con.select("SELECT * FROM usuarios WHERE username = '" + user + "' AND pass = '" + pass + "'");
             if(con.getNumRows() == 1){
+                
+                Menu menu = new Menu();
                 VentanaPrincipal VP = new VentanaPrincipal();
+                VP.setTitle("AUTO DEALER");
+                VP.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                VP.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                VP.mainPanel.add(menu);
+                VP.mainPanel.repaint();
+                VP.mainPanel.revalidate();
                 VP.setLocationRelativeTo(null);
                 VP.setVisible(true);
+                
                 this.dispose();
             }else{
                 this.error.setText("Credenciales invalidos");
