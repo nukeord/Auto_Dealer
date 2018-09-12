@@ -7,12 +7,15 @@ public class conexion {
     private static conexion con;    
     private static Connection db;
     private static int num_rows = 0;
+    public boolean status;
     private conexion(){
         try{
             Class.forName("com.mysql.jdbc.Driver");
             db = DriverManager.getConnection("jdbc:mysql://20y10lapuya.ddns.net:3306/db_auto?useSSL=false", "db_auto", "123456");
+            status = true;
         }catch(ClassNotFoundException | SQLException e){
             JOptionPane.showMessageDialog(null, "Error de conexion: " + e.getMessage());
+            status = false;
         }
     }
     

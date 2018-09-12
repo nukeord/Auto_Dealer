@@ -28,9 +28,11 @@ public class AutoDealer {
         c.setVisible(true);
         conexion con = conexion.getInstance();
         c.dispose();
-        Login login = new Login();
-        login.setLocationRelativeTo(null);
-        login.setVisible(true);
+        if(con.status){
+            Login login = new Login();
+            login.setLocationRelativeTo(null);
+            login.setVisible(true);
+        }
     }
     
 }
