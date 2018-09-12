@@ -34,11 +34,22 @@ public class conexion {
                 num_rows++;
             }
             RS.beforeFirst();
+            ST.close();
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Error SQL: " + e.getMessage());
         }        
         
         return RS;
+    }
+    
+    public void update(String query){
+        try{
+            Statement ST = db.createStatement();
+            ST.executeUpdate(query);
+            ST.close();
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Error SQL: "+e.getMessage());
+        }
     }
     
     public int getNumRows(){
