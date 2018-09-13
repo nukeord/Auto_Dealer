@@ -42,13 +42,13 @@ public class Crud {
      
      public static ResultSet select(String sql){
           ResultSet rs=null;
-          
+          nFilas = 0;
           try {
               rs = conex.createStatement().executeQuery(sql);
-              for (int i = 0;rs.next(); i++)
+               while(rs.next())
                     nFilas++;
-                      
-              rs.close();
+                       
+             
           } catch (SQLException ex) {
               Logger.getLogger(Crud.class.getName()).log(Level.SEVERE, null, ex);
           }

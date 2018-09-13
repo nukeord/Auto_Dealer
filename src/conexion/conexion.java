@@ -19,6 +19,7 @@ public class conexion {
     public Connection getConex(){
         return db;
     }
+   
     public static conexion getInstance(){
         if(con == null){
             con = new conexion();

@@ -80,10 +80,12 @@ public class EmpleadoDaoImpl implements Dao<Empleado>{
     public List<Empleado> obtenerTodos() {
             List<Empleado> empleados=new ArrayList<>();
         ResultSet set = Crud.select("select * from templeado");
-        
+     
         try {
-            while(set.next()){
+               set.beforeFirst();
+               while(set.next()){
                 int id = set.getInt(1);
+                  
                 String nombre = set.getString(2);
                 String apellido =set.getString(3);
                 String telefono = set.getString(4);
@@ -92,8 +94,9 @@ public class EmpleadoDaoImpl implements Dao<Empleado>{
                 String direccion =set.getString(7);
                 Empleado c =new Empleado(nombre, apellido, telefono, fax, correo, direccion, id);
                 empleados.add(c);
-               
+                  
             }
+               
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
