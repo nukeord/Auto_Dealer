@@ -90,6 +90,7 @@ public class Menu extends javax.swing.JPanel {
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel6MouseClicked(evt);
@@ -98,6 +99,7 @@ public class Menu extends javax.swing.JPanel {
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_User_Groups_100px.png"))); // NOI18N
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel7MouseClicked(evt);
@@ -112,6 +114,7 @@ public class Menu extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("CLIENTES");
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -268,20 +271,20 @@ public class Menu extends javax.swing.JPanel {
     
     public void openClientes(){
         Clientes cl = new Clientes();
+        cl.setVP(VP);
         this.VP.mainPanel.removeAll();
         this.VP.mainPanel.add(cl);
         this.VP.mainPanel.repaint();
         this.VP.mainPanel.revalidate();
-        System.out.println("Catgando");
     }
     
     public void openProveedores(){
         Proveedores prov = new Proveedores();
+        prov.setVP(VP);
         this.VP.mainPanel.removeAll();
         this.VP.mainPanel.add(prov);
         this.VP.mainPanel.repaint();
         this.VP.mainPanel.revalidate();
-        System.out.println("Catgando");
     }
     
     public void setMainWindow(VentanaPrincipal VP){

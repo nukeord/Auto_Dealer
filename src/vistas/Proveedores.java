@@ -10,7 +10,7 @@ package vistas;
  * @author Luis David Santiago
  */
 public class Proveedores extends javax.swing.JPanel {
-
+    private VentanaPrincipal VP;
     /**
      * Creates new form Clientes
      */
@@ -87,7 +87,10 @@ public class Proveedores extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-
+    public void setVP(VentanaPrincipal VP){
+        this.VP = VP;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;

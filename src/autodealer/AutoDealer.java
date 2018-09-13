@@ -32,6 +32,8 @@ public class AutoDealer {
             Login login = new Login();
             login.setLocationRelativeTo(null);
             login.setVisible(true);
+        }else{
+            System.exit(0);
         }
     }
     
