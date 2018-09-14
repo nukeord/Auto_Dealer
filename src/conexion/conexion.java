@@ -2,6 +2,8 @@ package conexion;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
+import modelo.Cliente;
+import modelo.Usuario;
 
 public class conexion {
     private static conexion con;    
@@ -17,6 +19,8 @@ public class conexion {
         }
     }
     public Connection getConex(){
+        
+        
         return db;
     }
    

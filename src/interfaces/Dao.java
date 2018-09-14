@@ -7,18 +7,23 @@ package interfaces;
 
 import java.util.List;
 import modelo.Cliente;
+import modelo.Empleado;
+import modelo.Usuario;
 
 /**
  *
  * @author rami
  */
-public interface Dao<T> {
+public interface Dao {
     
-      public void registrar(T t);
-    public void actualizar(T t);
-    public void eliminar(T t);
-    public T buscarPorId(int id);
-    public List<T> obtenerTodos();
+      public void registrar(Usuario user);
+    public void actualizar(Usuario user);
+    public void eliminar(Usuario user);
+    public Cliente getCliente(int id);
+    public Empleado getEmpleado(int id);
+    public List<Cliente> getClientes();
+    public List<Empleado> getEmpleados();
+    
     
     
 }

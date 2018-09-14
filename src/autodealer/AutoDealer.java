@@ -1,6 +1,7 @@
 package autodealer;
 
 import conexion.conexion;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -28,13 +29,10 @@ public class AutoDealer {
         c.setVisible(true);
         conexion con = conexion.getInstance();
         c.dispose();
-        if(con.status){
-            Login login = new Login();
-            login.setLocationRelativeTo(null);
-            login.setVisible(true);
-        }else{
-            System.exit(0);
-        }
+        Login login = new Login();
+        login.setLocationRelativeTo(null);
+        login.setVisible(true);
+        
     }
     
 }
